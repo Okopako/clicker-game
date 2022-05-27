@@ -149,28 +149,26 @@ public class ClickerMain {
     }
     public void setTimer() {
 
-        timer = new Timer(timerSpeed, new ActionListener() {    // in milliseconds
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        // in milliseconds
+        timer = new Timer(timerSpeed, e -> {
 
-                petCounter++;
-                counterLabel.setText(petCounter + " pets");
+            petCounter++;
+            counterLabel.setText(petCounter + " pets");
 
-                if (!mHandUnlocked) {
-                    if (petCounter >= 100) {
-                        mHandUnlocked = true;
-                        button2.setText("Mechanical hand " + "(" + mHandNumber + ")");
-                    }
-                } else if (!cSelfUnlocked) {
-                    if (petCounter >= 1000) {
-                        cSelfUnlocked = true;
-                        button3.setText("Clone of self " + "(" + cSelfNumber + ")");
-                    }
-                } else if (!catinatorUnlocked) {
-                    if (petCounter >= 10000) {
-                        catinatorUnlocked = true;
-                        button4.setText("CATinator " + "(" + catinatorNumber + ")");
-                    }
+            if (!mHandUnlocked) {
+                if (petCounter >= 100) {
+                    mHandUnlocked = true;
+                    button2.setText("Mechanical hand " + "(" + mHandNumber + ")");
+                }
+            } else if (!cSelfUnlocked) {
+                if (petCounter >= 1000) {
+                    cSelfUnlocked = true;
+                    button3.setText("Clone of self " + "(" + cSelfNumber + ")");
+                }
+            } else if (!catinatorUnlocked) {
+                if (petCounter >= 10000) {
+                    catinatorUnlocked = true;
+                    button4.setText("CATinator " + "(" + catinatorNumber + ")");
                 }
             }
         });
